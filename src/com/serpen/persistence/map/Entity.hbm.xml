@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 29/04/2015 07:37:16 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.serpen.logic.entity.Entity" table="entidad">
+		<!-- llave primaria de la clase -->
+        <id  column="nit" length="11" name="nit" type="string">
+            <generator class="identity" />
+        </id>
+        
+        <property column="tipo_entidad" length="1" name="entityType" type="string"/>
+        
+        <property column="nombre" length="15" name="name" type="string"/>
+        
+        <property column="descripcion" length="30" name="description" type="string"/>
+         
+        <set name="funds" table="convenio" inverse="false" lazy="true">
+            <key column="entidad"/>
+            <many-to-many column="fondo" class="com.serpen.logic.entity.PensionFund"/>
+        </set>
+        
+        <many-to-one column="id" name="conection" class="com.serpen.logic.entity.Conection" fetch="join"/>
+ 
+    </class>
+    
+</hibernate-mapping>
