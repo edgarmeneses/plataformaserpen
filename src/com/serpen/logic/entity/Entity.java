@@ -1,5 +1,8 @@
 package com.serpen.logic.entity;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * Clase entidad
  * esta clase contiene las entidades de educacion, turismo
@@ -10,62 +13,70 @@ package com.serpen.logic.entity;
 
 public class Entity {
 
-/**
- * Atributos de la clase, segun la base de datos 
- */
+	/**
+	 * Atributos de la clase, segun la base de datos 
+	 */
 	private String nit;
 	private Conection conection;
 	private String name;
 	private String entityType;
 	private String description;
-/**
- * Tipos de entidad
- * sea Educacion, vivienda y turismo 
- */
+	private Set<PensionFund> funds;
+	/**
+	 * Tipos de entidad
+	 * sea Educacion, vivienda y turismo 
+	 */
 	public static final char ENTITY_TYPE_EDUCATION='E';
 	public static final char ENTITY_TYPE_HOUSING='V';
 	public static final char ENTITY_TYPE_TOURISM='T';
-/**
- * Constructor vacio de la clase 	
- */
+	/**
+	 * Constructor vacio de la clase 	
+	 */
 	public Entity() {
-
+		this.funds = new HashSet<PensionFund>();
+		this.conection=new Conection();
 	}
-/**
- * Constructor con los atributos de la clase 
- * @param nit_entity
- * @param id
- * @param name
- * @param type_entity
- * @param description
- */
-	public Entity(String nit_entity, Conection conection, String name, String type_entity,
+	/**
+	 * Constructor con los atributos de la clase 
+	 * @param nit_entity
+	 * @param id
+	 * @param name
+	 * @param type_entity
+	 * @param description
+	 */
+	public Entity(String nit_entity, String name, String type_entity,
 			String description) {
-		
+
 		this.nit = nit_entity;
-		this.conection = conection;
+		this.conection = new Conection();
 		this.name = name;
 		this.entityType = type_entity;
 		this.description = description;
+		this.funds = new HashSet<PensionFund>();
 	}
-/**
- * Getters y Setters de cada uno de los atributos 
- * @return
- */
-	public String getNit_entity() {
+	/**
+	 * Getters y Setters de cada uno de los atributos 
+	 * @return
+	 */
+	public String getNit() {
 		return nit;
 	}
 
-	public void setNit_entity(String nit_entity) {
+	public void setNit(String nit_entity) {
 		this.nit = nit_entity;
 	}
 
-	public Conection getConnection() {
+	public Conection getConection() {
 		return this.conection;
 	}
 
-	public void setId(Conection conection) {
-		this.conection = conection;
+	public void setConection(int id, String url, int port, String nameBd, String nit) {
+		//conection = new Conection(id, url, port, name_Bd, nit)on
+		conection.setId(id);
+		conection.setName_Bd(nameBd);
+		conection.setNit(nit);
+		conection.setPort(port);
+		conection.setUrl(url);
 	}
 
 	public String getName() {
@@ -76,11 +87,11 @@ public class Entity {
 		this.name = name;
 	}
 
-	public String getType_entity() {
+	public String getEntityType() {
 		return entityType;
 	}
 
-	public void setType_entity(String type_entity) {
+	public void setEntityType(String type_entity) {
 		this.entityType = type_entity;
 	}
 
@@ -91,9 +102,17 @@ public class Entity {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-/**
- * Metodo tostring que retorna todos los atributos de la clase 
- */
+
+	public Set<PensionFund> getFunds() {
+		return funds;
+	}
+	
+	public void setFunds(Set<PensionFund> funds) {
+		this.funds = funds;
+	}
+	/**
+	 * Metodo tostring que retorna todos los atributos de la clase 
+	 */
 	@Override
 	public String toString() {
 		return "Entity [nit_entity=" + nit + ", conction=" + conection + ", name="
