@@ -1,5 +1,9 @@
 package com.serpen.logic.entity;
 
+import java.util.Set;
+
+import com.google.gwt.dev.util.collect.HashSet;
+
 public class PensionFund {
 	/**
 	 * nit del fondo de penciones
@@ -13,24 +17,30 @@ public class PensionFund {
 	 * porcentaje que el fondo aplica a las cesantias de un usuario
 	 */
 	private int porcent;
+	
+	private Set<Entity> collectionEntity;
 	/**
 	 * constructor por omicion de la clase PensionFund.java
 	 */
 	public PensionFund() {
 		// TODO Auto-generated constructor stub
+		collectionEntity = new HashSet<Entity>();
 	}
-	/**
-	 * Constructor de la clase PensionFund.java
-	 * se debe ingresar los valores para los atributos de la clase
-	 * @param nit nit
-	 * @param name nombre_fondo
-	 * @param porcent porcentaje_cesantias
-	 */
-	public PensionFund(String nit, String name, int porcent) {
-		super();
+/**
+ * Constructor de la clase PensionFund.java
+ * se debe ingresar los valores para los atributos de la clase
+ * @param nit
+ * @param name
+ * @param porcent
+ * @param collectionEntity
+ */
+	public PensionFund(String nit, String name, int porcent,
+			Set<Entity> collectionEntity) {
+	
 		this.nit = nit;
 		this.name = name;
 		this.porcent = porcent;
+		this.collectionEntity = collectionEntity;
 	}
 	/**
 	 * retorna el nit del fondo 
@@ -39,6 +49,7 @@ public class PensionFund {
 	public String getNit() {
 		return nit;
 	}
+
 	/**
 	 * asigna un valor al nit
 	 * @param nit
@@ -74,12 +85,24 @@ public class PensionFund {
 	public void setPorcent(int porcent) {
 		this.porcent = porcent;
 	}
+	
+	/**
+	 * Set como conexion para el mapeo 
+	 * @return
+	 */
+	public Set<Entity> getCollectionEntity() {
+		return collectionEntity;
+	}
+	public void setCollectionEntity(Set<Entity> collectionEntity) {
+		this.collectionEntity = collectionEntity;
+	}
 	/**
 	 * metodo delegado toString
 	 */
 	@Override
 	public String toString() {
 		return "PensionFund [nit=" + nit + ", name=" + name + ", porcent="
-				+ porcent + "]";
+				+ porcent + ", collectionEntity=" + collectionEntity + "]";
 	}
+
 }

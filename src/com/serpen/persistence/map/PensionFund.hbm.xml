@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 29/04/2015 10:51:53 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.serpen.logic.entity.PensionFund" table="fondo">
+    
+    <!-- nit de fondo. Llave primaria -->
+        <id column="nit" name="nit" type="java.lang.String">
+              <generator class="identity" />
+        </id>
+        
+    <!-- Atributos basicos de la clase PensionFund -->
+        <property column="nombre" length="25" name="name" type="string"/>
+        <property column="porcentaje" length="2" name="porcent" type="int"/>
+        
+    <!-- Atributos 0relacionados con otras tablas -->    
+        <set 
+        	name="collectionEntity"
+           	table="convenio">
+           	<key column="fondo"/>
+            <many-to-many 
+            column="nit"   
+            class="com.serpen.logic.entity.Entity" />
+        </set>
+    </class>
+</hibernate-mapping>
