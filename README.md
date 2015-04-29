@@ -1,2 +1,0 @@
-# plataformaserpen
-aplicacion serpen
