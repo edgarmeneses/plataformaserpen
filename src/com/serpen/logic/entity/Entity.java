@@ -19,7 +19,7 @@ public class Entity {
 	private String nit;
 	private Conection conection;
 	private String name;
-	private String entityType;
+	private char entityType;
 	private String description;
 	private Set<Agreement> agreements;
 	/**
@@ -44,13 +44,13 @@ public class Entity {
 	 * @param type_entity
 	 * @param description
 	 */
-	public Entity(String nit_entity, String name, String type_entity,
+	public Entity(String nit_entity, String name, char entityType,
 			String description) {
 
 		this.nit = nit_entity;
 		this.conection = new Conection();
 		this.name = name;
-		this.entityType = type_entity;
+		this.entityType = entityType;
 		this.description = description;
 		this.agreements = new HashSet<Agreement>();
 	}
@@ -87,12 +87,12 @@ public class Entity {
 		this.name = name;
 	}
 
-	public String getEntityType() {
+	public char getEntityType() {
 		return entityType;
 	}
 
-	public void setEntityType(String type_entity) {
-		this.entityType = type_entity;
+	public void setEntityType(char entityType) {
+		this.entityType = entityType;
 	}
 
 	public String getDescription() {
