@@ -18,13 +18,17 @@ public class PensionFund {
 	 */
 	private int porcent;
 	
-	private Set<Entity> collectionEntity;
+	private Set<Agreement> collectionAgreement;
+	
+	private Set<User> collectionUser;
 	/**
 	 * constructor por omicion de la clase PensionFund.java
 	 */
 	public PensionFund() {
 		// TODO Auto-generated constructor stub
-		collectionEntity = new HashSet<Entity>();
+		collectionAgreement = new HashSet<Agreement>();
+		collectionUser = new HashSet<User>();
+		
 	}
 /**
  * Constructor de la clase PensionFund.java
@@ -35,12 +39,13 @@ public class PensionFund {
  * @param collectionEntity
  */
 	public PensionFund(String nit, String name, int porcent,
-			Set<Entity> collectionEntity) {
+			Set<Agreement> collectionAgreement,Set<User> collectionUser) {
 	
 		this.nit = nit;
 		this.name = name;
 		this.porcent = porcent;
-		this.collectionEntity = collectionEntity;
+		this.collectionAgreement = collectionAgreement;
+		this.collectionUser = collectionUser;
 	}
 	/**
 	 * retorna el nit del fondo 
@@ -90,11 +95,17 @@ public class PensionFund {
 	 * Set como conexion para el mapeo 
 	 * @return
 	 */
-	public Set<Entity> getCollectionEntity() {
-		return collectionEntity;
+	public Set<Agreement> getCollectionAgreement() {
+		return collectionAgreement;
 	}
-	public void setCollectionEntity(Set<Entity> collectionEntity) {
-		this.collectionEntity = collectionEntity;
+	public void setCollectionAgreement(Set<Agreement> collectionAgreement) {
+		this.collectionAgreement = collectionAgreement;
+	}
+	public Set<User> getCollectionUser() {
+		return collectionUser;
+	}
+	public void setCollectionUser(Set<User> collectionUser) {
+		this.collectionUser = collectionUser;
 	}
 	/**
 	 * metodo delegado toString
@@ -102,7 +113,8 @@ public class PensionFund {
 	@Override
 	public String toString() {
 		return "PensionFund [nit=" + nit + ", name=" + name + ", porcent="
-				+ porcent + ", collectionEntity=" + collectionEntity + "]";
+				+ porcent + ", collectionAgreement=" + collectionAgreement
+				+ ", collectionUser=" + collectionUser + "]";
 	}
 
 }
