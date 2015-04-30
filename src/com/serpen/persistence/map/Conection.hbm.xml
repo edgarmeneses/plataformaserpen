@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 29/04/2015 10:28:42 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.serpen.logic.entity.Conection" table="coneccion">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="increment" />
+        </id>
+        <property name="url" type="string">
+            <column name="url" />
+        </property>
+        <property name="port" type="int">
+            <column name="puerto" />
+        </property>
+        <property name="name_Bd" type="string">
+            <column name="nombre_bd" />
+        </property>
+        <property name="nit" type="string">
+            <column name="nit" />
+        </property>
+    </class>
+</hibernate-mapping>
