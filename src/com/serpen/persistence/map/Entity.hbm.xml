@@ -15,12 +15,12 @@
         
         <property column="descripcion" length="30" name="description" type="string"/>
          
-        <set name="funds" table="convenio" inverse="false" lazy="true">
+        <set name="agreements">
             <key column="entidad"/>
-            <many-to-many column="fondo" class="com.serpen.logic.entity.PensionFund"/>
+            <one-to-many class="com.serpen.logic.entity.Agreement"/>
         </set>
         
-        <many-to-one column="id" name="conection" class="com.serpen.logic.entity.Conection" fetch="join"/>
+        <one-to-one name="conection" cascade="persist.delete" />
  
     </class>
     

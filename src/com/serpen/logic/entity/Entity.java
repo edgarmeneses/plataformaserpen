@@ -72,13 +72,12 @@ public class Entity {
 
 	public void setConection(int id, String url, int port, String nameBd, String nit) {
 		//conection = new Conection(id, url, port, name_Bd, nit)on
-		conection.setId(id);
-		conection.setName_Bd(nameBd);
-		conection.setNit(nit);
-		conection.setPort(port);
-		conection.setUrl(url);
+				conection.setId(id);
+				conection.setName_Bd(nameBd);
+				conection.setNit(nit);
+				conection.setPort(port);
+				conection.setUrl(url);
 	}
-
 	public String getName() {
 		return name;
 	}
@@ -110,14 +109,14 @@ public class Entity {
 	public void setAgreements(Set<Agreement> agreements) {
 		this.agreements = agreements;
 	}
+
 	/**
 	 * Metodo tostring que retorna todos los atributos de la clase 
 	 */
 	@Override
 	public String toString() {
-		return "Entity [nit_entity=" + nit + ", conction=" + conection + ", name="
-				+ name + ", type_entity=" + entityType + ", description="
-				+ description + "]";
+		return "Entity [nit=" + nit + ", conection=" + conection + ", name="
+				+ name + ", entityType=" + entityType + ", description="
+				+ description + ", agreements=" + agreements + "]";
 	}
-
 }
