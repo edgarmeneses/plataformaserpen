@@ -21,7 +21,7 @@ public class Entity {
 	private String name;
 	private String entityType;
 	private String description;
-	private Set<PensionFund> funds;
+	private Set<Agreement> agreements;
 	/**
 	 * Tipos de entidad
 	 * sea Educacion, vivienda y turismo 
@@ -33,7 +33,7 @@ public class Entity {
 	 * Constructor vacio de la clase 	
 	 */
 	public Entity() {
-		this.funds = new HashSet<PensionFund>();
+		this.agreements = new HashSet<Agreement>();
 		this.conection=new Conection();
 	}
 	/**
@@ -52,7 +52,7 @@ public class Entity {
 		this.name = name;
 		this.entityType = type_entity;
 		this.description = description;
-		this.funds = new HashSet<PensionFund>();
+		this.agreements = new HashSet<Agreement>();
 	}
 	/**
 	 * Getters y Setters de cada uno de los atributos 
@@ -103,12 +103,12 @@ public class Entity {
 		this.description = description;
 	}
 
-	public Set<PensionFund> getFunds() {
-		return funds;
+	public Set<Agreement> getAgreements() {
+		return agreements;
 	}
 	
-	public void setFunds(Set<PensionFund> funds) {
-		this.funds = funds;
+	public void setAgreements(Set<Agreement> agreements) {
+		this.agreements = agreements;
 	}
 	/**
 	 * Metodo tostring que retorna todos los atributos de la clase 
