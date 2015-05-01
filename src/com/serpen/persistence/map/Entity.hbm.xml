@@ -9,7 +9,7 @@
             <generator class="identity" />
         </id>
         
-        <property column="tipo_entidad" length="1" name="entityType" type="string"/>
+        <property column="tipo_entidad" length="1" name="entityType" type="char"/>
         
         <property column="nombre" length="15" name="name" type="string"/>
         
